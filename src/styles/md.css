@@ -29,6 +29,7 @@ html:not(.dark) {
 }
 
 html.dark {
+	/* --prism-foreground: #a43b3b; */
 	--prism-foreground: #d4d4d4;
 	--prism-background: #1e1e1e;
 

@@ -8,7 +8,7 @@
 		"source.fixAll.eslint": true
 	},
 	"files.associations": {
-		"*.css": "postcss"
+		"*.css": "css"
 	},
 	"editor.formatOnSave": false,
 	"css.lint.unknownAtRules": "ignore",
@@ -35,7 +35,7 @@
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[vue]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": "Vue.volar"
 	},
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"

@@ -1,12 +1,19 @@
 <template>
-	<Navigation />
-	<div class="w-screen flex flex-col items-center justify-center">
-		<router-view v-slot="{ Component }">
-			<transition name="fade" mode="out-in">
-				<component :is="Component" />
-			</transition>
-		</router-view>
-	</div>
+	<n-layout>
+		<n-layout-header>
+			<Navigation />
+		</n-layout-header>
+		<n-layout-content content-style="padding: 24px;">
+			<div class="w-screen flex flex-col items-center justify-center">
+				<router-view v-slot="{ Component }">
+					<transition name="fade" mode="out-in">
+						<component :is="Component" />
+					</transition>
+				</router-view>
+			</div>
+		</n-layout-content>
+		<!-- <n-layout-footer>尾部</n-layout-footer> -->
+	</n-layout>
 </template>
 
 <style>
