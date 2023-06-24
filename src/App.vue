@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { naiveTheme, isDark } from 'vue-dark-switch'
-import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
+import { naiveTheme, toggleDark, isDark } from 'vue-dark-switch'
+import { NConfigProvider, GlobalThemeOverrides, useOsTheme } from 'naive-ui'
 
-const light: GlobalThemeOverrides = {
+// 设置默认语言
+let { locale } = useI18n()
+locale.value = 'zh-cn'
+
+// 设置默认主题
+let light: GlobalThemeOverrides = {
 	common: {
 		primaryColor: '#30A2FFFF',
 		primaryColorHover: '#6AB7F7FF',
@@ -10,7 +15,7 @@ const light: GlobalThemeOverrides = {
 		primaryColorSuppl: '#6AB7F7FF',
 	},
 }
-const dark: GlobalThemeOverrides = {
+let dark: GlobalThemeOverrides = {
 	common: {
 		primaryColor: '#9AC5F4FF',
 		primaryColorHover: '#B2D7FFFF',
@@ -19,6 +24,12 @@ const dark: GlobalThemeOverrides = {
 		popoverColor: '#252525FF',
 	},
 }
+
+// 跟随操作系统
+const osThemeRef = useOsTheme()
+onBeforeMount(() => {
+	osThemeRef.value === 'light' ? toggleDark(false) : toggleDark(true)
+})
 </script>
 
 <template>

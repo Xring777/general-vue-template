@@ -1,16 +1,11 @@
+<script lang="ts" setup>
+const { t } = useI18n()
+</script>
 <template>
-	<div>index</div>
+	<div>{{ t('about') }}</div>
 </template>
 
 <style>
-a {
-	color: rgba(37, 99, 235);
-}
-
-p {
-	padding: 0 10px;
-}
-
 .logo {
 	width: 10em;
 	height: 10em;

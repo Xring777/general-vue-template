@@ -12,7 +12,6 @@
 				</router-view>
 			</div>
 		</n-layout-content>
-		<!-- <n-layout-footer>尾部</n-layout-footer> -->
 	</n-layout>
 </template>
 
