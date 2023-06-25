@@ -29,8 +29,10 @@
   "packageManager": "pnpm@8.6.3",
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.11",
+    "@iconify-json/ic": "^1.1.13",
     "@iconify-json/mdi": "^1.1.52",
     "@intlify/unplugin-vue-i18n": "^0.11.0",
+    "@tauri-apps/cli": "^1.4.0",
     "@types/ityped": "^1.0.1",
     "@types/node": "^18.16.18",
     "@typescript-eslint/parser": "^5.60.0",
@@ -61,7 +63,6 @@
     "local-pkg": "^0.4.3",
     "markdown-it-prism": "^2.3.0",
     "mockjs": "^1.1.0",
-    "naive-ui": "^2.34.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.4",
     "pinia-plugin-persistedstate": "^3.1.0",
@@ -104,5 +105,8 @@
   },
   "repository": {
     "url": "https://github.com/dishait/tov-template"
+  },
+  "dependencies": {
+    "naive-ui": "^2.34.4"
   }
 }

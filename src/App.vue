@@ -27,8 +27,16 @@ let dark: GlobalThemeOverrides = {
 
 // 跟随操作系统
 const osThemeRef = useOsTheme()
-onBeforeMount(() => {
-	osThemeRef.value === 'light' ? toggleDark(false) : toggleDark(true)
+onMounted(() => {
+	if (localStorage.getItem('vueuse-color-scheme') === 'auto') {
+		localStorage.setItem(
+			'vueuse-color-scheme',
+			osThemeRef.value ? osThemeRef.value : 'light'
+		)
+	}
+	localStorage.getItem('vueuse-color-scheme') === 'dark'
+		? toggleDark(true)
+		: toggleDark(false)
 })
 </script>
 

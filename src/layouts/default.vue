@@ -1,19 +1,22 @@
 <template>
 	<n-layout>
 		<n-layout-header>
-			<Navigation />
+			<nav-bar />
 		</n-layout-header>
-		<n-layout-content content-style="padding: 24px;">
-			<div class="w-screen flex flex-col items-center justify-center">
-				<router-view v-slot="{ Component }">
-					<transition name="fade" mode="out-in">
+		<n-divider class="pb-2 !m-0 md:pb-4 sm:pb-2" />
+		<n-layout-content>
+			<router-view v-slot="{ Component }">
+				<transition name="fade" mode="out-in">
+					<Container>
 						<component :is="Component" />
-					</transition>
-				</router-view>
-			</div>
+					</Container>
+				</transition>
+			</router-view>
 		</n-layout-content>
 	</n-layout>
 </template>
+
+<script setup lang="ts"></script>
 
 <style>
 .fade-enter-active,

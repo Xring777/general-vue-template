@@ -4,13 +4,11 @@ const typedRef = useTyped([' is not found!'])
 
 <template>
 	<div class="h-screen flex flex-wrap items-center justify-around text-center">
-		<div class="desc font-bold">
+		<div class="desc flex flex-col font-bold">
 			<div class="code text-7xl">404</div>
-			<div ref="typedRef" class="content mb-5 text-3xl">The Page</div>
+			<div ref="typedRef" class="content mb-16 text-3xl">The Page</div>
 			<RouterLink to="/">
-				<n-button type="primary" size="large" quaternary strong
-					>Go Home</n-button
-				>
+				<n-button size="large" quaternary strong>👉 Go Home</n-button>
 			</RouterLink>
 		</div>
 
@@ -44,7 +42,8 @@ const typedRef = useTyped([' is not found!'])
 <route lang="json">
 {
 	"meta": {
-		"layout": "notFound"
+		"layout": "notFound",
+		"name": "notFound"
 	}
 }
 </route>

@@ -6,3 +6,6 @@ language: language
 theme: theme
 en: English
 zh-cn: 简体中文
+auth: auth
+user: user
+search: search

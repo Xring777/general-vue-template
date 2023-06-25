@@ -7,6 +7,19 @@ export const router = createRouter({
 	routes: setupLayouts(fileRoutes),
 })
 
+router.beforeEach((to, from, next) => {
+	if (to.meta.authRequire && !localStorage.getItem('token')) {
+		next({
+			path: '/auth',
+			query: {
+				redirect: to.fullPath,
+			},
+		})
+	} else {
+		next()
+	}
+})
+
 export const getRoutes = createGetRoutes(router)
 
 export default router
