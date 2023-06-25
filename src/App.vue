@@ -1,49 +1,21 @@
 <script setup lang="ts">
-import { naiveTheme, toggleDark, isDark } from 'vue-dark-switch'
-import { NConfigProvider, GlobalThemeOverrides, useOsTheme } from 'naive-ui'
+import { naiveTheme, isDark } from 'vue-dark-switch'
+import { NConfigProvider } from 'naive-ui'
 
 // 设置默认语言
-let { locale } = useI18n()
-locale.value = 'zh-cn'
+useI18n().locale.value = 'zh-cn'
+localStorage.setItem('need-auth', useI18n().t('need-auth'))
 
-// 设置默认主题
-let light: GlobalThemeOverrides = {
-	common: {
-		primaryColor: '#30A2FFFF',
-		primaryColorHover: '#6AB7F7FF',
-		primaryColorPressed: '#2584D2FF',
-		primaryColorSuppl: '#6AB7F7FF',
-	},
-}
-let dark: GlobalThemeOverrides = {
-	common: {
-		primaryColor: '#9AC5F4FF',
-		primaryColorHover: '#B2D7FFFF',
-		primaryColorSuppl: '#B2D7FFFF',
-		primaryColorPressed: '#82BCFBFF',
-		popoverColor: '#252525FF',
-	},
-}
-
-// 跟随操作系统
-const osThemeRef = useOsTheme()
-onMounted(() => {
-	if (localStorage.getItem('vueuse-color-scheme') === 'auto') {
-		localStorage.setItem(
-			'vueuse-color-scheme',
-			osThemeRef.value ? osThemeRef.value : 'light'
-		)
-	}
-	localStorage.getItem('vueuse-color-scheme') === 'dark'
-		? toggleDark(true)
-		: toggleDark(false)
-})
+// 设置默认颜色
+const { light, dark, setDefaultTheme } = useDefaultColors()
+onBeforeMount(() => setDefaultTheme())
 </script>
 
 <template>
 	<n-config-provider
 		:theme="naiveTheme"
 		:theme-overrides="isDark ? dark : light"
+		class="h-full"
 	>
 		<router-view />
 	</n-config-provider>

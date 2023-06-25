@@ -1,10 +1,7 @@
 <template>
-	<n-layout>
-		<n-layout-header>
-			<nav-bar />
-		</n-layout-header>
-		<n-divider class="pb-2 !m-0 md:pb-4 sm:pb-2" />
-		<n-layout-content>
+	<div class="h-full flex flex-col">
+		<nav-bar class="shadow-sm" />
+		<div class="mt-2 h-full flex-1 shadow-sm">
 			<router-view v-slot="{ Component }">
 				<transition name="fade" mode="out-in">
 					<Container>
@@ -12,11 +9,14 @@
 					</Container>
 				</transition>
 			</router-view>
-		</n-layout-content>
-	</n-layout>
+		</div>
+		<TabBar v-if="!lg" class="w-full" />
+	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const lg = useMediaQuery('(min-width: 1024px)')
+</script>
 
 <style>
 .fade-enter-active,

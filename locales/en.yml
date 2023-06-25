@@ -1,7 +1,6 @@
 # English
 
 home: home
-about: about
 language: language
 theme: theme
 en: English
@@ -9,3 +8,7 @@ zh-cn: 简体中文
 auth: auth
 user: user
 search: search
+need-auth: Need Auth!
+sign-out: logout
+sign-in: login
+sign-up: register

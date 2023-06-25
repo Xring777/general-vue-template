@@ -1,9 +1,12 @@
 home: 主页
-about: 关于
 language: 语言
 theme: 主题
 en: English
 zh-cn: 简体中文
 auth: 认证
-user: 用户
+user: 用户信息
 search: 搜索
+need-auth: 需要登录！
+sign-out: 退出登录
+sign-in: 登录
+sign-up: 注册

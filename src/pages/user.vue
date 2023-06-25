@@ -8,7 +8,10 @@
 <route lang="json">
 {
 	"meta": {
-		"authRequire": true
+		"authRequire": true,
+		"name": "user",
+		"icon": "i-mdi:account-outline",
+		"activeIcon": "i-mdi:account"
 	}
 }
 </route>
