@@ -78,11 +78,11 @@ const mdOptions = [
 		>
 			<img src="/public/logo.png" class="h-12 w-16 px-3 py-2" />
 			<!-- TODO: 修改logo -->
-			<p v-if="lg" class="text-xl font-semibold">网站</p>
+			<p class="text-xl font-semibold">网站</p>
 		</div>
 		<nav
 			aria-label="Site Nav"
-			class="mx-auto max-w-full flex flex-1 items-center justify-between gap-10 p-4 md:px-10"
+			class="mx-auto max-w-full flex flex-1 items-center justify-between gap-10 p-4 lg:px-10"
 		>
 			<div v-if="lg">
 				<ul class="flex items-center justify-start gap-8 px-5">
