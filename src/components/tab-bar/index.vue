@@ -1,7 +1,7 @@
 <template>
 	<nav
-		aria-label="Site Nav"
-		class="mx-auto max-w-full border-t-dark-500 py-2 md:px-10"
+		aria-label="Site Tab"
+		class="fixed bottom-0 z-50 mx-auto max-w-full w-full border-t bg-white py-2 md:px-10"
 	>
 		<div>
 			<ul class="flex items-center justify-around gap-8 px-5">
@@ -31,7 +31,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { t } = useLanguage()
-const { routes } = useSiteRoutes()
+const { routesTabbar: routes } = useSiteRoutes()
 </script>
 
 <style scoped></style>

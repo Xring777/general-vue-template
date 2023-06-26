@@ -4,7 +4,7 @@ theme: 主题
 en: English
 zh-cn: 简体中文
 auth: 认证
-user: 用户信息
+user: 用户
 search: 搜索
 need-auth: 需要登录！
 sign-out: 退出登录

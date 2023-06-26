@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<Container> user </Container>
 </template>
 
 <script setup lang="ts"></script>
