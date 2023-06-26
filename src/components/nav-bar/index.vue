@@ -4,7 +4,7 @@ const { lg, md } = useMediaWidth()
 
 <template>
 	<div
-		class="fixed z-50 w-full bg-white shadow-md dark:bg-[#141415] dark:shadow-blue-gray-800 dark:shadow-sm"
+		class="fixed z-50 w-full bg-white p-1 shadow-md dark:bg-[#141415] dark:shadow-blue-gray-800 dark:shadow-sm"
 	>
 		<div class="flex items-center justify-between">
 			<NavBarLogo v-if="md" />
@@ -21,6 +21,5 @@ const { lg, md } = useMediaWidth()
 				<NavBarTail v-if="lg" />
 			</nav>
 		</div>
-		<n-divider :style="{ padding: 0, margin: 0 }" />
 	</div>
 </template>

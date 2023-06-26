@@ -52,10 +52,11 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 900,
         "resizable": true,
-        "title": "tov-template",
-        "width": 800
+        "title": "",
+        "width": 1200,
+				"titleBarStyle": "Overlay"
       }
     ]
   }
