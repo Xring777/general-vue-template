@@ -32,25 +32,5 @@
 <script setup lang="ts">
 import { SwitchIcon, toggleDark } from 'vue-dark-switch'
 const { localeOptions } = useLanguage()
-const mdOptions = [
-	{
-		label: 'github',
-		key: 'github',
-		icon: 'mdi:github',
-		props: {
-			onclick: () => {
-				window.open('https://github.com/dishait/tov-template')
-			},
-		},
-	},
-	{
-		label: 'language',
-		key: 'language',
-		icon: 'heroicons:language',
-	},
-	{
-		label: 'theme',
-		key: 'theme',
-	},
-]
+const { mdOptions } = useMoreToolOptions()
 </script>
