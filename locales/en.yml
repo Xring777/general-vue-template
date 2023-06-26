@@ -9,6 +9,21 @@ auth: auth
 user: user
 search: search
 need-auth: Need Auth!
-sign-out: logout
-sign-in: login
-sign-up: register
+sign-out: Logout
+sign-in: Login
+sign-up: Register
+sign-in-sign-up: sign
+github: Github
+Welcome back: Welcome back
+Login to your account: Login to your account!
+Continue With Google: Continue With Google
+Continue With Github: Continue With Github
+First time use site: First time use site?
+Create an account: Create an account
+Welcome to site: Welcome to sitw
+Create your account: Create your account!
+Already hav an account: Already hav an account
+To Login: To Login
+username: username
+email: email
+password: password

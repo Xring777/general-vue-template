@@ -8,11 +8,12 @@ const typedRef = useTyped([' is not found!'])
 			<div class="code text-7xl">404</div>
 			<div ref="typedRef" class="content mb-16 text-3xl">The Page</div>
 			<RouterLink to="/">
-				<n-button size="large" quaternary strong>👉 Go Home</n-button>
+				<n-button size="large" strong quaternary>👉 Go Home</n-button>
 			</RouterLink>
 		</div>
 
 		<img src="/notFound/32.svg" class="cover" alt="page not found" />
+		<div v-if="false" class="i-mdi:home i-mdi:home-outline i-mdi:logout" />
 	</div>
 </template>
 

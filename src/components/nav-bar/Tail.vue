@@ -2,7 +2,10 @@
 	<div>
 		<ul class="flex items-center gap-2">
 			<li>
-				<a href="https://github.com/dishait/tov-template" target="_blank">
+				<a
+					href="https://github.com/Xring777/general-vue3-ts-navieUI-template"
+					target="_blank"
+				>
 					<n-button text :focusable="false">
 						<div
 							class="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium"
@@ -14,7 +17,7 @@
 				</a>
 			</li>
 			<li>
-				<n-dropdown trigger="click" :options="localeOptions">
+				<LocaleMenu>
 					<n-button text :focusable="false">
 						<div
 							class="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium"
@@ -23,7 +26,7 @@
 							<p>{{ t('language') }}</p>
 						</div>
 					</n-button>
-				</n-dropdown>
+				</LocaleMenu>
 			</li>
 			<li>
 				<n-button text :focusable="false" @click="toggleDark()">
@@ -42,9 +45,6 @@
 <script setup lang="ts">
 import { SwitchIcon, toggleDark } from 'vue-dark-switch'
 const { t } = useLanguage()
-defineProps<{
-	localeOptions: any[]
-}>()
 </script>
 
 <style scoped></style>

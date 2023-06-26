@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 // const { t } = useI18n()
+// import MyModal from '~/components/my-modal/index.vue'
 </script>
 <template>
-	<div class="flex items-center justify-center">
-		<!-- {{t('')}} -->
-		我的网站
-		<div
-			v-if="false"
-			class="i-gg:log-in i-gg:log-out i-mdi:home i-mdi:home-outline"
-		/>
-	</div>
+	<n-card embedded>
+		<div class="flex items-center justify-center">
+			<MdTest class="px-5" />
+		</div>
+	</n-card>
 </template>
 
 <style></style>

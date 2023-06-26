@@ -1,7 +1,7 @@
 <template>
-	<div class="h-full flex flex-col">
-		<nav-bar class="shadow-sm" />
-		<div class="mt-2 h-full flex-1 shadow-sm">
+	<div class="h-full">
+		<nav-bar />
+		<div class="h-full flex-1 pt-20">
 			<router-view v-slot="{ Component }">
 				<transition name="fade" mode="out-in">
 					<Container>

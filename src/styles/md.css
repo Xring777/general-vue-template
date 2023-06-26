@@ -56,7 +56,7 @@ html.dark {
 	--my-primary-color-hover:#B2D7FFFF;
 	--my-primary-color-suppl:#82BCFBFF;
 	--my-primary-color-pressed:#B2D7FFFF;
-	--popover-color: #252525FF;
+	--my-popover-color: #252525FF;
 }
 ol {
 	padding-left: 15px;

@@ -8,18 +8,10 @@ export const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-	if (to.query.needRedirct === '1') {
-		next({
-			path: to.path,
-			query: {
-				redirect: from.fullPath === '/' ? '' : from.fullPath,
-			},
-		})
-	}
 	if (to.meta.authRequire && !localStorage.getItem('token')) {
 		toast.info(localStorage.getItem('need-auth') as string)
 		next({
-			path: '/auth',
+			path: from.fullPath,
 			query: {
 				redirect: to.fullPath,
 			},

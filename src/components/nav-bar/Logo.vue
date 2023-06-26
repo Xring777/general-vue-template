@@ -3,9 +3,13 @@
 		class="flex cursor-pointer items-center justify-between pl-10"
 		@click="router.push('/')"
 	>
-		<img src="/logo.png" class="logo h-12 w-16 px-3 py-2" />
+		<img src="/logo.png" class="logo px-1 py-1" />
 		<!-- TODO: 修改logo -->
-		<p class="text-xl font-semibold <lg:hidden hover:text-shadow">网站</p>
+		<p
+			class="pl-2 font-mono text-xl font-semibold <lg:hidden hover:text-shadow"
+		>
+			Exering
+		</p>
 	</div>
 </template>
 
@@ -15,8 +19,8 @@ const router = useRouter()
 
 <style scoped>
 .logo {
-	width: 5em;
-	height: 4em;
+	width: 3em;
+	height: 3em;
 	will-change: filter;
 	transition: filter 300ms;
 }
