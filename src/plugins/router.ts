@@ -7,9 +7,12 @@ export const router = createRouter({
 	routes: setupLayouts(fileRoutes),
 })
 
-router.beforeEach((to, from, next) => {
-	if (to.meta.authRequire && !localStorage.getItem('token')) {
+router.beforeEach(async (to, from, next) => {
+	const { isLogin } = await useUserInfo()
+	const modal = loginModal()
+	if (to.meta.authRequire && !isLogin) {
 		toast.info(localStorage.getItem('need-auth') as string)
+		modal.show()
 		next({
 			path: from.fullPath,
 			query: {
