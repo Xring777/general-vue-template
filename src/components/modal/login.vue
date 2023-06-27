@@ -17,16 +17,15 @@
 		</template>
 
 		<div class="flex flex-col gap-5">
-			<Transition>
+			<n-collapse-transition :show="toggleRegister">
 				<n-input
-					v-show="toggleRegister"
 					v-model:value="username"
 					size="large"
 					round
 					type="text"
 					:placeholder="t('username')"
 				/>
-			</Transition>
+			</n-collapse-transition>
 			<n-input
 				v-model:value="email"
 				size="large"
@@ -131,7 +130,7 @@ const onSubmit = () => {
 	console.log(email.value, password.value, route.query)
 	route.query.redirect &&
 		router.push({
-			path: route.query.redirect,
+			path: route.query.redirect as string,
 		})
 }
 </script>
