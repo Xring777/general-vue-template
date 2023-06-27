@@ -1,5 +1,5 @@
 <template>
-	<n-input round :placeholder="t('search')">
+	<n-input :style="{}" round :placeholder="t('search')">
 		<template #suffix>
 			<div class="i-mdi:magnify" />
 		</template>

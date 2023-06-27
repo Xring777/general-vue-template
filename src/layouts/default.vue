@@ -1,8 +1,9 @@
 <template>
-	<div>
-		<nav-bar />
-		<TabBar v-if="!lg" />
-		<div class="h-full pb-18 pt-23">
+	<div class="h-[100vh] flex flex-col">
+		<div class="z-50">
+			<nav-bar />
+		</div>
+		<div class="flex-grow overflow-auto overflow-x-hidden pb-2 pt-3">
 			<router-view v-slot="{ Component }">
 				<transition name="fade" mode="out-in">
 					<Container>
@@ -10,6 +11,9 @@
 					</Container>
 				</transition>
 			</router-view>
+		</div>
+		<div>
+			<TabBar v-if="!lg" />
 		</div>
 	</div>
 </template>

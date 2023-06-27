@@ -1,7 +1,7 @@
 <template>
 	<nav
 		aria-label="Site Tab"
-		class="fixed bottom-0 z-50 mx-auto max-w-full w-full border-t bg-white py-2 dark:border-gray-800 dark:bg-[#141415] md:px-10"
+		class="mx-auto max-w-full w-full border-t bg-white py-2 dark:border-gray-800 dark:bg-[#141415] md:px-10"
 	>
 		<div>
 			<ul class="flex items-center justify-around gap-8 px-5">

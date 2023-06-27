@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<ul class="flex items-center justify-start gap-8 px-5">
+		<ul class="flex items-center justify-start gap-7">
 			<li v-for="r of routes" :key="r.path" class="">
 				<RouterLink :to="r.path">
 					<a
