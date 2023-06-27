@@ -22,6 +22,6 @@ export default () => {
 			},
 		},
 	]
-	const signIning = [{}]
+	const signIning: any[] = []
 	return { signIned, signIning }
 }

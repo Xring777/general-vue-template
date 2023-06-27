@@ -5,7 +5,7 @@
 		</template>
 		<template #content>
 			<MenuGroupItem
-				v-for="option in options.value"
+				v-for="option in options"
 				:key="option.key"
 				:label="option.label"
 				:icon="option.icon"
@@ -28,7 +28,6 @@ const { signIned, signIning } = useUserMenu()
 const login = loginModal()
 
 let isLogin = ref(false)
-let options = ref([])
 
 let userInfo = reactive<UserInfo>({
 	username: '',
@@ -43,13 +42,13 @@ const signOption = {
 	key: 'sign in sign-up',
 	icon: 'mdi:login',
 }
-
+let options: any[] = []
 onMounted(async () => {
 	const data = await userUserInfo()
 	isLogin.value = data.isLogin
 	if (isLogin.value) {
 		userInfo = data.userInfo
 	}
-	options.value = isLogin.value ? signIned : signIning
+	options = isLogin.value ? signIned : signIning
 })
 </script>
