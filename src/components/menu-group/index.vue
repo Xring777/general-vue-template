@@ -11,7 +11,7 @@
 				:class="right ? 'right-0' : 'left-0'"
 			>
 				<div
-					class="w-[30vw] flex flex-col cursor-pointer lg:w-[8vw] md:w-[15vw] sm:w-[20vw]"
+					class="w-27 flex flex-col cursor-pointer sm:w-30"
 					@click="isOpen = !isOpen"
 				>
 					<slot name="content" />
