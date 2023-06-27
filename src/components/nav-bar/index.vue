@@ -1,5 +1,30 @@
 <script setup lang="ts">
-const { lg, md } = useMediaWidth()
+import { UserMenuOptionsType } from '~/types/menuOptions'
+import { UserInfo } from '~/types/user'
+
+const { lg, md, sm } = useMediaWidth()
+const { signIned, signIning } = useUserMenu()
+
+let isLogin = ref(false)
+let options: Ref<UserMenuOptionsType> = ref([])
+
+let userInfo = reactive<UserInfo>({
+	username: '',
+	email: '',
+	avatar: '',
+	description: '',
+	gender: '',
+	age: '',
+})
+
+onMounted(async () => {
+	const data = await useUserInfo()
+	isLogin.value = data.isLogin
+	if (isLogin.value) {
+		userInfo = data.userInfo
+	}
+	options.value = isLogin.value ? signIned : signIning
+})
 </script>
 
 <template>
@@ -13,11 +38,10 @@ const { lg, md } = useMediaWidth()
 				class="mx-auto max-w-full flex flex-1 items-center justify-between gap-10 p-3 lg:px-10"
 			>
 				<NavBarHeader v-if="lg" />
-				<div class="flex flex-1 items-center justify-between gap-3">
-					<div class="flex flex-1 items-center gap-3">
-						<UserMenu />
-						<Search />
-					</div>
+				<div class="flex flex-1 items-center justify-around">
+					<UserDrawer v-if="!sm" :user-info="userInfo" :options="options" />
+					<UserMenu v-else :user-info="userInfo" :options="options" />
+					<Search />
 					<MoreOptionMenu v-if="!lg" />
 				</div>
 				<NavBarTail v-if="lg" />

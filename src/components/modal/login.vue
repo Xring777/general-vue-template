@@ -95,7 +95,7 @@
 						<div>
 							{{
 								toggleRegister
-									? t('Already hav an account')
+									? t('Already have an account')
 									: t('First time use site')
 							}}
 						</div>

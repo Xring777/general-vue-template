@@ -1,5 +1,6 @@
 <template>
-	<div class="h-[100vh] flex flex-col">
+	<Spin />
+	<div class="h-full flex flex-col">
 		<div class="z-50">
 			<nav-bar />
 		</div>
@@ -16,6 +17,7 @@
 			<TabBar v-if="!lg" />
 		</div>
 	</div>
+	<ModalLogin />
 </template>
 
 <script setup lang="ts">

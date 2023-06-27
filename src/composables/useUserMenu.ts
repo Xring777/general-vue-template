@@ -1,9 +1,10 @@
+import type { UserMenuOptionsType } from '~/types/menuOptions'
 import { router } from './../plugins/router'
 export default () => {
-	const signIned = [
+	const signIned: UserMenuOptionsType = [
 		{
 			label: 'user',
-			key: 'sign in',
+			key: 'user',
 			icon: 'mdi:account-outline',
 			props: {
 				onClick: () => router.push('/user'),
@@ -22,6 +23,18 @@ export default () => {
 			},
 		},
 	]
-	const signIning: any[] = []
+	const signIning: UserMenuOptionsType = [
+		{
+			label: 'sign-in-sign-up',
+			key: 'sign in sign-up',
+			icon: 'mdi:login',
+			props: {
+				onClick: () => {
+					// userDrawer().close()
+					loginModal().show()
+				},
+			},
+		},
+	]
 	return { signIned, signIning }
 }

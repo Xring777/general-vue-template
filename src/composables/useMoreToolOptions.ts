@@ -1,5 +1,6 @@
+import type { MdMenuOptionsType } from '~/types/menuOptions'
 export default () => {
-	const mdOptions = [
+	const mdOptions: MdMenuOptionsType = [
 		{
 			label: 'github',
 			key: 'github',
@@ -16,10 +17,17 @@ export default () => {
 			label: 'language',
 			key: 'language',
 			icon: 'heroicons:language',
+			props: {
+				onClick() {},
+			},
 		},
 		{
 			label: 'theme',
 			key: 'theme',
+			icon: '',
+			props: {
+				onClick() {},
+			},
 		},
 	]
 	return { mdOptions }
