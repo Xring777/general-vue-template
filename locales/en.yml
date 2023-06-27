@@ -27,3 +27,5 @@ To Login: To Login
 username: username
 email: email
 password: password
+unknown: unknown
+options: options
