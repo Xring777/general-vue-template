@@ -26,11 +26,6 @@ html:not(.dark) {
 	--prism-builtin: #800000;
 	--prism-property: #ce9178;
 	--prism-regex: #ad502b;
-
-	--my-primary-color:#30A2FFFF;
-	--my-primary-color-hover:#6AB7F7FF;
-	--my-primary-color-suppl:#2584D2FF;
-	--my-primary-color-pressed:#6AB7F7FF;
 }
 
 html.dark {
@@ -51,12 +46,6 @@ html.dark {
 	--prism-builtin: #d16969;
 	--prism-property: #ce9178;
 	--prism-regex: #ad502b;
-
-	--my-primary-color:#9AC5F4FF;
-	--my-primary-color-hover:#B2D7FFFF;
-	--my-primary-color-suppl:#82BCFBFF;
-	--my-primary-color-pressed:#B2D7FFFF;
-	--my-popover-color: #252525FF;
 }
 ol {
 	padding-left: 15px;

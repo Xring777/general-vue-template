@@ -4,13 +4,13 @@
 			<slot />
 		</template>
 		<template #content>
-			<MenuGroupItem
+			<MenuItem
 				v-for="option in localeOptions"
 				:key="option.key"
 				:label="option.key"
 				@on-click="option.props.onClick"
 			>
-			</MenuGroupItem>
+			</MenuItem>
 		</template>
 	</MenuGroup>
 </template>

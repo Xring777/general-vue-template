@@ -1,10 +1,6 @@
 @import './md.css';
+@import './common.css';
 
-.truncate {
-	display: block;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
 
 html.dark {
 	/* background: #1e1e20 !important; */

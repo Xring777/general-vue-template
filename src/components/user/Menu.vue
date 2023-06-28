@@ -4,7 +4,7 @@
 			<Avatar :src="userInfo.avatar" />
 		</template>
 		<template #content>
-			<MenuGroupItem
+			<MenuItem
 				v-for="option in options"
 				:key="option.key"
 				:label="option.label"

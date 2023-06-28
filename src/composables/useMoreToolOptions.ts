@@ -7,9 +7,7 @@ export default () => {
 			icon: 'mdi:github',
 			props: {
 				onClick: () => {
-					window.open(
-						'https://github.com/Xring777/general-vue3-ts-navieUI-template'
-					)
+					window.open('https://github.com/Xring777/general-vue-template')
 				},
 			},
 		},

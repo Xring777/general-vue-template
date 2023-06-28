@@ -43,7 +43,7 @@
 import { SwitchIcon, toggleDark } from 'vue-dark-switch'
 const { t } = useLanguage()
 const handleGithub = () => {
-	window.open('https://github.com/Xring777/general-vue3-ts-navieUI-template')
+	window.open('https://github.com/Xring777/general-vue-template')
 }
 </script>
 

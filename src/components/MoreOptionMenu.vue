@@ -6,25 +6,25 @@
 			></div>
 		</template>
 		<template #content>
-			<MenuGroupItem
+			<MenuItem
 				:label="mdOptions[0].label"
 				:icon="mdOptions[0].icon"
 				@on-click="mdOptions[0].props.onClick"
 			/>
 			<!-- <Teleport > -->
 			<NDropdown :options="localeOptions" trigger="click">
-				<MenuGroupItem
+				<MenuItem
 					:label="mdOptions[1].label"
 					:icon="mdOptions[1].icon"
 					@click.stop=""
 				/>
 			</NDropdown>
 			<!-- </Teleport> -->
-			<MenuGroupItem :label="mdOptions[2].label" @click.stop="toggleDark()">
+			<MenuItem :label="mdOptions[2].label" @click.stop="toggleDark()">
 				<template #icon>
 					<SwitchIcon @click="toggleDark()" />
 				</template>
-			</MenuGroupItem>
+			</MenuItem>
 		</template>
 	</MenuGroup>
 </template>
