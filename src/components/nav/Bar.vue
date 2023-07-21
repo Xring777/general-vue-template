@@ -23,7 +23,7 @@ onMounted(async () => {
 	if (isLogin.value) {
 		userInfo = data.userInfo
 	}
-	options.value = isLogin.value ? signIned : signIning
+	options.value = isLogin.value ? [...signIned] : [...signIning]
 })
 </script>
 
@@ -38,7 +38,9 @@ onMounted(async () => {
 				class="mx-auto max-w-full flex flex-1 items-center justify-between gap-10 p-3 lg:px-10"
 			>
 				<NavHeader v-if="lg" />
-				<div class="flex flex-1 items-center justify-around">
+				<div
+					class="flex flex-1 items-center justify-between gap-x-2 lg:justify-end"
+				>
 					<UserDrawer v-if="!sm" :user-info="userInfo" :options="options" />
 					<UserMenu v-else :user-info="userInfo" :options="options" />
 					<Search />

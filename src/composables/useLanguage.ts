@@ -2,7 +2,7 @@ export default () => {
 	const { t, availableLocales, locale } = useI18n()
 
 	const localeOptions = availableLocales.map((availableLocale) => ({
-		label: t(availableLocale),
+		label: availableLocale,
 		key: availableLocale,
 		props: {
 			onClick: () => {

@@ -1,7 +1,9 @@
 export type MenuOptionsType = {
 	label: string
 	key: string
-	icon: string
+	icon?: string
+	children?: MenuOptionsType
+	submenuOpen?: boolean
 	props: {
 		onClick: () => void
 	}

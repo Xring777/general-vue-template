@@ -1,18 +1,9 @@
 <template>
-	<MenuGroup>
-		<template #default>
+	<Menu :options="options" position-y="bottom" position-x="middle">
+		<template #button>
 			<Avatar :src="userInfo.avatar" />
 		</template>
-		<template #content>
-			<MenuItem
-				v-for="option in options"
-				:key="option.key"
-				:label="option.label"
-				:icon="option.icon"
-				@on-click="option.props.onClick"
-			/>
-		</template>
-	</MenuGroup>
+	</Menu>
 </template>
 
 <script setup lang="ts">

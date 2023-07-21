@@ -13,7 +13,10 @@ const typedRef = useTyped([' is not found!'])
 		</div>
 
 		<img src="/notFound/32.svg" class="cover" alt="page not found" />
-		<div v-if="false" class="i-mdi:home i-mdi:home-outline i-mdi:logout" />
+		<div
+			v-if="false"
+			class="i-mdi:home i-mdi:home-outline i-mdi:logout i-mdi:test-tube"
+		/>
 	</div>
 </template>
 

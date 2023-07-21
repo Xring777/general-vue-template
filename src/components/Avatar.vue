@@ -1,8 +1,7 @@
 <template>
 	<div
 		:style="size === 'md' ? md : size === 'lg' ? lg : sm"
-		class="flex cursor-pointer items-center items-center justify-center gap-3 border-[1px] border-1 p-1 transition hover:animate-rotate-in hover:animate-duration-200 hover:shadow-md"
-		dark="hover:shadow-gray-600 border-dark-300"
+		class="flex cursor-pointer items-center items-center justify-center gap-3 p-1 transition hover:animate-tada"
 		:rounded="round ? 'full' : '0'"
 	>
 		<img
@@ -26,11 +25,12 @@ withDefaults(
 		round?: boolean
 	}>(),
 	{
+		src: '',
 		size: 'md',
 		round: true,
 	}
 )
 const lg = { width: '80px', height: '80px' }
-const md = { width: '50px', height: '50px' }
+const md = { width: '40px', height: '40px' }
 const sm = { width: '20px', height: '20px' }
 </script>

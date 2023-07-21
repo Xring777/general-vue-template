@@ -1,5 +1,7 @@
+import { toggleDark } from 'vue-dark-switch'
 import type { MdMenuOptionsType } from '~/types/menuOptions'
 export default () => {
+	const { localeOptions } = useLanguage()
 	const mdOptions: MdMenuOptionsType = [
 		{
 			label: 'github',
@@ -15,6 +17,7 @@ export default () => {
 			label: 'language',
 			key: 'language',
 			icon: 'heroicons:language',
+			children: localeOptions,
 			props: {
 				onClick() {},
 			},
@@ -22,9 +25,10 @@ export default () => {
 		{
 			label: 'theme',
 			key: 'theme',
-			icon: '',
 			props: {
-				onClick() {},
+				onClick() {
+					toggleDark()
+				},
 			},
 		},
 	]
