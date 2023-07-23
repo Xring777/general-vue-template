@@ -33,6 +33,7 @@
     "@iconify-json/heroicons": "^1.1.11",
     "@iconify-json/ic": "^1.1.13",
     "@iconify-json/mdi": "^1.1.52",
+    "@iconify-json/pajamas": "^1.1.29",
     "@intlify/unplugin-vue-i18n": "^0.11.0",
     "@tauri-apps/cli": "^1.4.0",
     "@types/ityped": "^1.0.1",

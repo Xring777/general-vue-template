@@ -29,6 +29,9 @@ devDependencies:
   '@iconify-json/mdi':
     specifier: ^1.1.52
     version: 1.1.52
+  '@iconify-json/pajamas':
+    specifier: ^1.1.29
+    version: 1.1.29
   '@intlify/unplugin-vue-i18n':
     specifier: ^0.11.0
     version: 0.11.0(vue-i18n@9.2.2)
@@ -2033,6 +2036,12 @@ packages:
 
   /@iconify-json/mdi@1.1.52:
     resolution: {integrity: sha512-tLzpFcmoGw1/jHcl+BshUd4bqvP4755OUluaARsuKskTp2aIPIAkRQOhzJGpry9CZ0i82z0alq4HrKrp9uvj4A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/pajamas@1.1.29:
+    resolution: {integrity: sha512-pIlfCwnrNE9agAtq4v/DGvDlZ76Ww6L42UyGeXUQ1emwJ52evE/Zfi2mRekqclZibGxMP1H0ji0F1Ccnc+T+4A==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

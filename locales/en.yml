@@ -1,5 +1,3 @@
-# English
-
 home: home
 language: language
 theme: theme
@@ -30,3 +28,9 @@ password: password
 unknown: unknown
 options: options
 test: test
+pick-up: pick up
+search-history: Histories
+show-more: more
+search-trending: Trendings
+none-search-item: Please enter your search!
+clear-all: clear all

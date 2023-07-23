@@ -35,7 +35,7 @@ onMounted(async () => {
 			<NavLogo v-if="md" />
 			<nav
 				aria-label="Site Nav"
-				class="mx-auto max-w-full flex flex-1 items-center justify-between gap-10 p-3 lg:px-10"
+				class="mx-auto max-w-full flex flex-1 items-center gap-10 p-3 lg:px-10"
 			>
 				<NavHeader v-if="lg" />
 				<div
