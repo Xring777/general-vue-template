@@ -133,10 +133,7 @@
 						</div>
 						<div
 							class="cursor-pointer text-neutral-500 hover:underline"
-							@click="
-								toggleRegister = !toggleRegister
-								forgotPassword = false
-							"
+							@click="handleToggle"
 						>
 							{{ toggleRegister ? t('To Login') : t('Create an account') }}
 						</div>
@@ -163,6 +160,10 @@ const password = ref('')
 const confirmPassword = ref('')
 
 const toggleRegister = ref(false)
+const handleToggle = () => {
+	toggleRegister.value = !toggleRegister.value
+	forgotPassword.value = false
+}
 const forgotPassword = ref(false)
 const onSubmit = () => {
 	isLoading.value = true
