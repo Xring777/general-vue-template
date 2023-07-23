@@ -134,8 +134,7 @@
 						<div
 							class="cursor-pointer text-neutral-500 hover:underline"
 							@click="
-								toggleRegister = !toggleRegister
-								forgotPassword = false
+								;(toggleRegister = !toggleRegister), (forgotPassword = false)
 							"
 						>
 							{{ toggleRegister ? t('To Login') : t('Create an account') }}
