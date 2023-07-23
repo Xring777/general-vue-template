@@ -6,11 +6,11 @@
 		</div>
 		<div class="flex-grow overflow-auto overflow-x-hidden pb-2 pt-3">
 			<router-view v-slot="{ Component }">
-				<transition name="fade" mode="out-in">
-					<Container>
+				<Container>
+					<transition name="fade" mode="out-in">
 						<component :is="Component" />
-					</Container>
-				</transition>
+					</transition>
+				</Container>
 			</router-view>
 		</div>
 		<div>

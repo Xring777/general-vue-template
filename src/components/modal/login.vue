@@ -11,7 +11,11 @@
 			<Heading
 				:title="toggleRegister ? t('Welcome to site') : t('Welcome back')"
 				:sub-title="
-					toggleRegister ? t('Create your account') : t('Login to your account')
+					toggleRegister
+						? t('Create your account')
+						: forgotPassword
+						? t('Get your password back')
+						: t('Login to your account')
 				"
 			/>
 		</template>
@@ -33,6 +37,15 @@
 				type="text"
 				:placeholder="t('email')"
 			/>
+			<n-collapse-transition :show="toggleRegister || forgotPassword">
+				<n-input
+					v-model:value="verificationCode"
+					size="large"
+					round
+					type="text"
+					:placeholder="t('Verification code')"
+				/>
+			</n-collapse-transition>
 			<n-input
 				v-model:value="password"
 				size="large"
@@ -41,6 +54,26 @@
 				show-password-on="click"
 				:placeholder="t('password')"
 			/>
+			<n-collapse-transition :show="toggleRegister || forgotPassword">
+				<n-input
+					v-model:value="confirmPassword"
+					size="large"
+					round
+					type="password"
+					show-password-on="click"
+					:placeholder="t('confirm-password')"
+				/>
+			</n-collapse-transition>
+			<n-collapse-transition :show="!toggleRegister">
+				<div
+					class="flex items-center justify-end px-2 text-xs"
+					@click="forgotPassword = !forgotPassword"
+				>
+					<div class="cursor-pointer opacity-50 hover:opacity-70">
+						{{ forgotPassword ? t('To Login') : t('forgot-password') }}
+					</div>
+				</div>
+			</n-collapse-transition>
 			<n-button type="primary" size="large" round secondary @click="onSubmit()">
 				<div
 					class="flex items-center hover:text-[var(--my-primary-color-hover)]"
@@ -100,7 +133,10 @@
 						</div>
 						<div
 							class="cursor-pointer text-neutral-500 hover:underline"
-							@click="toggleRegister = !toggleRegister"
+							@click="
+								toggleRegister = !toggleRegister
+								forgotPassword = false
+							"
 						>
 							{{ toggleRegister ? t('To Login') : t('Create an account') }}
 						</div>
@@ -122,17 +158,25 @@ const modal = loginModal()
 const isLoading = ref(false)
 const username = ref('')
 const email = ref('')
+const verificationCode = ref('')
 const password = ref('')
+const confirmPassword = ref('')
 
 const toggleRegister = ref(false)
+const forgotPassword = ref(false)
 const onSubmit = () => {
 	isLoading.value = true
-	console.log(email.value, password.value, route.query)
+	// console.log(email.value, password.value, route.query)
+	// TODO:注册，登录，找回
+	// if (toggleRegister){
+
+	// }else if (forgotPassword){
+
+	// }
+
 	route.query.redirect &&
 		router.push({
 			path: route.query.redirect as string,
 		})
 }
 </script>
-
-<style scoped></style>

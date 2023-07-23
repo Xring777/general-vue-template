@@ -39,7 +39,7 @@ onMounted(async () => {
 			>
 				<NavHeader v-if="lg" />
 				<div
-					class="flex flex-1 items-center justify-between gap-x-2 lg:justify-end"
+					class="flex flex-1 items-center justify-center gap-x-4 lg:justify-end"
 				>
 					<UserDrawer v-if="!sm" :user-info="userInfo" :options="options" />
 					<UserMenu v-else :user-info="userInfo" :options="options" />

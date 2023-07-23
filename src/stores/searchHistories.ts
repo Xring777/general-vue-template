@@ -6,7 +6,10 @@ export default defineStore('SearchHistories', {
 			histories: [],
 		}
 	},
-	getters: {},
+	getters: {
+		halfHistories: (state) => state.histories.slice(0, 10),
+		allHistories: (state) => state.histories,
+	},
 	actions: {
 		add(item: string) {
 			this.histories = this.histories.filter((i) => i !== item)

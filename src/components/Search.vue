@@ -4,7 +4,7 @@
 		class="fixed inset-0"
 		@click="showDropdown = false"
 	/>
-	<div class="relative max-w-full w-3/4 flex items-center">
+	<div class="relative max-w-full w-3/4 flex flex-1 items-center">
 		<n-input
 			v-model:value="searchTerm"
 			clearable
@@ -42,58 +42,56 @@
 						v-show="!dropdownItemsComputed.length"
 						class="flex items-center justify-center p-1.5 text-sm"
 					>
-						无搜索结果
+						{{ t('none-result') }}
 					</li>
 				</ul>
 				<div v-show="!searchTerm" class="flex flex-col">
-					<div class="flex items-center justify-between">
-						<div class="px-4 py-2 text-lg font-semibold">
-							{{ t('search-history') }}
-						</div>
-						<div
-							class="flex items-center justify-center px-5 text-xs opacity-50 hover:opacity-70"
-						>
-							<div
-								class="cursor-pointer"
-								@click="searchHistoriesStore.remove()"
-							>
-								{{ t('clear-all') }}
+					<div v-show="searchHistoriesStore.histories.length">
+						<div class="flex items-center justify-between">
+							<div class="px-4 py-2 text-lg font-semibold">
+								{{ t('search-history') }}
+							</div>
+							<div class="px-5 text-xs opacity-50">
+								<div
+									class="flex cursor-pointer items-center gap-1 hover:opacity-70"
+									@click="searchHistoriesStore.remove()"
+								>
+									<div class="i-mdi:trash-can-outline h-4 w-4" />
+									<div>{{ t('clear-all') }}</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<ul
-						class="w-full overflow-hidden px-4 transition-all"
-						:class="showMoreRecords ? 'h-[8.375rem]' : 'h-[3.375rem]'"
-					>
-						<li
-							v-for="(item, index) in searchHistoriesStore.histories"
-							:key="item"
-							class="float-left p-0.5"
-						>
-							<n-tag
-								class="cursor-pointer border-0 rounded-md bg-neutral-200"
-								dark="bg-[var(--my-popover-color-hover)]"
-								closable
-								size="small"
-								@close="searchHistoriesStore.remove(index)"
+						<ul class="w-full flex flex-wrap px-4">
+							<li
+								v-for="(item, index) in showMoreRecords
+									? searchHistoriesStore.allHistories
+									: searchHistoriesStore.halfHistories"
+								:key="item"
+								class="p-0.5"
 							>
-								<div hover="text-[var(--my-primary-color-hover)]">
-									{{ item }}
-								</div>
-							</n-tag>
-						</li>
-					</ul>
-					<div
-						class="flex items-center justify-center text-xs opacity-50 transition hover:opacity-70"
-						@click="showMoreRecords = !showMoreRecords"
-					>
-						<div class="flex cursor-pointer items-center justify-center">
-							{{ !showMoreRecords ? t('show-more') : t('pick-up') }}
+								<n-tag
+									class="cursor-pointer border-0 rounded-md bg-neutral-200"
+									dark="bg-[var(--my-popover-color-hover)]"
+									closable
+									size="small"
+									@close="searchHistoriesStore.remove(index)"
+								>
+									<div hover="text-[var(--my-primary-color-hover)]">
+										{{ item }}
+									</div>
+								</n-tag>
+							</li>
+						</ul>
+						<div
+							class="flex items-center justify-center text-xs opacity-50 transition"
+							@click="showMoreRecords = !showMoreRecords"
+						>
 							<div
-								v-show="!showMoreRecords"
-								class="i-mdi:chevron-down h-4 w-4"
-							/>
-							<div v-show="showMoreRecords" class="i-mdi:chevron-up h-4 w-4" />
+								v-show="searchHistoriesStore.histories.length > 10"
+								class="flex cursor-pointer items-center justify-center hover:opacity-70"
+							>
+								{{ !showMoreRecords ? t('show-more') : t('pick-up') }}
+							</div>
 						</div>
 					</div>
 					<ul class="w-full py-1">
