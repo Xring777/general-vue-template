@@ -10,7 +10,7 @@ export default defineStore('SearchHistories', {
 	actions: {
 		add(item: string) {
 			this.histories = this.histories.filter((i) => i !== item)
-			if (this.histories.length >= 2) {
+			if (this.histories.length >= 20) {
 				this.histories.pop()
 			}
 			this.histories = [item, ...this.histories]
